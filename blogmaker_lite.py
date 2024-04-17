@@ -12,7 +12,13 @@ settings.configure(
 )
 
 def index(request):
-    return HttpResponse("BlogMaker Lite")
+    title = "BlogMaker Lite"
+    description = "Start a blog!"
+
+    page_text = f"<h1>{title}</h1>"
+    page_text += f"<p>{description}</p>"
+
+    return HttpResponse(page_text)
 
 urlpatterns = [
     path("", index)
