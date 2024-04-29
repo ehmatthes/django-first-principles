@@ -2,7 +2,6 @@ from pathlib import Path
 import os
 
 import django
-from django.conf import settings
 from django.urls import path
 from django.core.handlers.wsgi import WSGIHandler
 from django.core.management import \
