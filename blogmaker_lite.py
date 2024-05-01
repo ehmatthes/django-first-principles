@@ -14,6 +14,7 @@ def index(request):
     return render(request, "index.html")
 
 urlpatterns = [
+    path("admin/", admin.site.urls),
     path("", index)
 ]
 
