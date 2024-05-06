@@ -20,8 +20,8 @@ def blogs(request):
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("blogs/", blogs),
-    path("", index),
+    path("blogs/", blogs, name="blogs"),
+    path("", index, name="index"),
 ]
 
 application = WSGIHandler()
