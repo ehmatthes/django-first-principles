@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>BlogMaker Lite</h1>
+
+  <h2>Blogs</h2>
+
+  {% for blog in blogs %}
+    <h3>{{ blog.title }}</h3>
+    <p>{{ blog.description }}</p>
+  {% empty %}
+    <h3>No blogs have been added yet.</h3>
+  {% endfor %}
+
+{% endblock content %}
