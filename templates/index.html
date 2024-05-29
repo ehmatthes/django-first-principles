@@ -2,8 +2,12 @@
 
 {% block content %}
 
-  <p>BlogMaker Lite lets you share your thoughts with the world.</p>
-  <p>Make a blog today, and let us know what you're thinking!</p>
+  <div class="hero">
+    <p><span class="title">BlogMaker Lite</span> lets you share your thoughts with the world.</p>
+    <p>Make a blog today, and let us know what you're thinking!</p>
+  </div>
 
-  <a href="{% url 'blogs' %}">See all blogs</a>
+  <a class="button primary" href="{% url 'blogs' %}">
+    See all blogs</a>
+    
 {% endblock content %}
