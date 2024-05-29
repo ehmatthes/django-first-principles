@@ -1,15 +1,28 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    
+    <link href="{% static 'chota.css' %}" rel="stylesheet"
+      type="text/css">
+    
     <title>BlogMaker Lite</title>
   </head>
+
   <body>
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="active" href="{% url 'index' %}">BlogMaker Lite</a>
+      </div>
+    </nav>
 
-    <h1>
-      <a href="{% url 'index' %}">BlogMaker Lite</a>
-    </h1>
-    {% block content %}{% endblock content %}
-
+    <div class="container">
+      {% block content %}{% endblock content %}
+    </div>
+    
   </body>
 </html>
