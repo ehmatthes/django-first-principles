@@ -21,6 +21,7 @@ def blogs(request):
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("blogs/", blogs, name="blogs"),
+    path("blogs/<int:blog_id>/", blog, name="blog"),
     path("", index, name="index"),
 ]
 
