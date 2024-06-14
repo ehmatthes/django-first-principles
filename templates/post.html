@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h2>{{ post.title }}</h2>
+  <h3>{{ blog.title }}</h3>
+
+  <p>{{ post.date_added|date:"DATE_FORMAT"}}</p>
+
+  <div>{{ post.body|linebreaks }}</div>
+
+{% endblock content %}
