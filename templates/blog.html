@@ -7,7 +7,10 @@
   {% for post in posts %}
 
     <div class="card">
-      <header><h3>{{ post.title }}</h3></header>
+      <header>
+        <h3><a href="{% url 'post' post.id %}">
+          {{ post.title }}</a></h3>
+      </header>
       <p>{{ post.date_added|date:"DATE_FORMAT"}}</p>
       <p>{{ post.body|truncatewords:10 }}</p>
     </div>
