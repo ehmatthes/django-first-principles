@@ -28,6 +28,16 @@ def blog(request, blog_id):
     }
     return render(request, "blog.html", context)
 
+def post(request, post_id):
+    post = BlogPost.objects.get(id=post_id)
+    blog = post.blog
+
+    context = {
+        "post": post,
+        "blog": blog,
+    }
+    return render(request, "post.html", context)
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("blogs/", blogs, name="blogs"),
