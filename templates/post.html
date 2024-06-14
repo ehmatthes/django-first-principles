@@ -6,7 +6,9 @@
 
   <div class="text-right">
     <span>{{ post.date_added|date:"DATE_FORMAT"}}</span> |
-    <span>{{ blog.title }}</span>
+    <span>
+      <a href="{% url 'blog' blog.id %}">{{ blog.title }}</a>
+    </span>
   </div>
 
   <div class="post-body">
