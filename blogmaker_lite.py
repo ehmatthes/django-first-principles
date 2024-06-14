@@ -32,6 +32,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("blogs/", blogs, name="blogs"),
     path("blogs/<int:blog_id>/", blog, name="blog"),
+    path("posts/<int:post_id>/", post, name="post"),
     path("", index, name="index"),
 ]
 
