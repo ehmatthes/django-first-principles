@@ -24,7 +24,10 @@ cmd_parts = cmd.split()
 call_command(*cmd_parts)
 
 # Create sample blogs.
-from model_factories import BlogFactory
+from model_factories import BlogFactory, BlogPostFactory
 
 for _ in range(10):
     BlogFactory.create()
+
+for _ in range(100):
+    BlogPostFactory.create()
