@@ -34,7 +34,9 @@ call_command(*cmd_parts)
 from model_factories import BlogFactory, BlogPostFactory
 
 for _ in range(args.num_blogs):
-    BlogFactory.create()
+    BlogFactory.create() 
+print(f"Generated {args.num_blogs} sample blogs.")
 
 for _ in range(args.num_posts):
     BlogPostFactory.create()
+print(f"Generaged {args.num_posts} sample posts.")
