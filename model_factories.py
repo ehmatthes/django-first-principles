@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, choice
 
 import factory
 from faker import Faker
@@ -20,6 +20,10 @@ def get_body():
     ]
     return "\n\n".join(paragraphs)
 
+def get_blog():
+    blogs = Blog.objects.all()
+    return choice(blogs)
+
 class BlogFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Blog
@@ -33,4 +37,4 @@ class BlogPostFactory(factory.django.DjangoModelFactory):
 
     title = factory.LazyFunction(get_title)
     body = factory.LazyFunction(get_body)
-    blog = factory.Iterator(Blog.objects.all())
+    blog = factory.LazyFunction(get_blog)
