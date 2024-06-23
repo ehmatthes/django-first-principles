@@ -1,9 +1,16 @@
 """Script to generate sample data."""
 
+import argparse
 import os
 
 import django
 from django.core.management import call_command
+
+# Parse CLI args.
+parser = argparse.ArgumentParser()
+parser.add_argument("--num-blogs", type=int, default=10)
+parser.add_argument("--num-posts", type=int, default=100)
+args = parser.parse_args()
 
 # Load settings.
 os.environ["DJANGO_SETTINGS_MODULE"] = "settings"
@@ -26,8 +33,8 @@ call_command(*cmd_parts)
 # Create sample blogs.
 from model_factories import BlogFactory, BlogPostFactory
 
-for _ in range(10):
+for _ in range(args.num_blogs):
     BlogFactory.create()
 
-for _ in range(100):
+for _ in range(args.num_posts):
     BlogPostFactory.create()
