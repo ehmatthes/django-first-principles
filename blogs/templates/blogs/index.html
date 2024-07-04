@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "blogs/base.html" %}
 
 {% block content %}
 
@@ -7,7 +7,7 @@
     <p>Make a blog today, and let us know what you're thinking!</p>
   </div>
 
-  <a class="button primary" href="{% url 'blogs' %}">
+  <a class="button primary" href="{% url 'blogs:blogs' %}">
     See all blogs</a>
     
 {% endblock content %}

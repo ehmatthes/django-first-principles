@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "blogs/base.html" %}
 
 {% block content %}
 
@@ -9,7 +9,7 @@
     <div class="card">
       <header>
         <h3>
-          <a href="{% url 'blog' blog.id %}">{{ blog.title }}</a>
+          <a href="{% url 'blogs:blog' blog.id %}">{{ blog.title }}</a>
         </h3>
       </header>
       <p>{{ blog.description }}</p>
