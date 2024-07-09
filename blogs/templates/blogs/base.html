@@ -21,7 +21,7 @@
 
       <div class="nav-right">
         {% if user.is_authenticated %}
-          <span>Hello, {{ user.username }}.</span>
+          <span class="is-vertical-align">Hello, {{ user.username }}.</span>
         {% else %}
           <a href="{% url 'accounts:login' %}">Log in</a>
         {% endif %}
