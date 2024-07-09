@@ -23,6 +23,7 @@ TEMPLATES=[
 
 INSTALLED_APPS=[
     "blogs",
+    "accounts",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -51,3 +52,5 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = "staticfiles/"
+
+LOGIN_REDIRECT_URL = "blogs:index"
