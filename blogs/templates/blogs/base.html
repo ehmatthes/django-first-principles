@@ -18,6 +18,14 @@
         <a class="active" href="{% url 'blogs:index' %}">BlogMaker Lite</a>
         <a href="{% url 'blogs:blogs' %}">All blogs</a>
       </div>
+
+      <div class="nav-right">
+        {% if user.is_authenticated %}
+          <span>Hello, {{ user.username }}.</span>
+        {% else %}
+          <a href="{% url 'accounts:login' %}">Log in</a>
+        {% endif %}
+      </div>
     </nav>
 
     <div class="container">
