@@ -3,6 +3,7 @@
 {% block content %}
 
   <h2>{{ post.title }}</h2>
+  <p class="text-right blog-owner">{{ blog.owner.username }}</p>
 
   <div class="text-right">
     <span>{{ post.date_added|date:"DATE_FORMAT"}}</span> |
