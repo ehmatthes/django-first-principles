@@ -27,3 +27,8 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+p.blog-owner {
+    font-size: 1.75rem;
+    margin-top: -20px;
+}

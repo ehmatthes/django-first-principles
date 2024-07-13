@@ -3,6 +3,7 @@
 {% block content %}
 
   <h2>{{ blog.title }}</h2>
+  <p class="text-right blog-owner">{{ blog.owner.username }}</p>
 
   {% for post in posts %}
 
