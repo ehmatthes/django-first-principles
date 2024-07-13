@@ -9,6 +9,9 @@ from blogs.models import Blog, BlogPost
 
 fake = Faker()
 
+def get_username():
+    return fake.email().split("@")[0]
+
 def get_title():
     return " ".join(fake.words()).title()
 
@@ -29,6 +32,13 @@ def get_blog_owner():
 def get_blog():
     blogs = Blog.objects.all()
     return choice(blogs)
+
+class UserFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = User
+
+    username = factory.LazyFunction(get_username)
+    password = "fake_pw"
 
 class BlogFactory(factory.django.DjangoModelFactory):
     class Meta:

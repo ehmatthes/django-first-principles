@@ -30,6 +30,14 @@ cmd += " --noinput"
 cmd_parts = cmd.split()
 call_command(*cmd_parts)
 
+# Create sample users.
+from model_factories import UserFactory
+
+num_users = int(args.num_blogs / 3)
+for _ in range(num_users):
+    UserFactory.create()
+print(f"Generated {num_users} sample users.")
+
 # Create sample blogs.
 from model_factories import BlogFactory, BlogPostFactory
 
