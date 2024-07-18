@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import Blog, BlogPost
+from .forms import BlogForm
 
 
 def index(request):
@@ -30,3 +31,17 @@ def post(request, post_id):
         "blog": blog,
     }
     return render(request, "blogs/post.html", context)
+
+def new_blog(request):
+    if request.method != "POST":
+        form = BlogForm()
+    else:
+        form = BlogForm(data=request.POST)
+        if form.is_valid():
+            new_blog = form.save(commit=False)
+            new_blog.owner = request.user
+            new_blog.save()
+            return redirect("blogs:blogs")
+
+    context = {"form": form}
+    return render(request, "blogs/new_blog.html", context)

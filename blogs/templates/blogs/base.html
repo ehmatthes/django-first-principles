@@ -17,6 +17,10 @@
       <div class="nav-left">
         <a class="active" href="{% url 'blogs:index' %}">BlogMaker Lite</a>
         <a href="{% url 'blogs:blogs' %}">All blogs</a>
+
+        {% if user.is_authenticated %}
+          <a href="{% url 'blogs:new_blog' %}">Create blog</a>
+        {% endif %}
       </div>
 
       <div class="nav-right">
