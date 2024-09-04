@@ -52,6 +52,10 @@ def new_blog(request):
 def new_post(request, blog_id):
     blog = Blog.objects.get(id=blog_id)
 
+    # Only allow blog owners to add new posts.
+    if request.user != blog.owner:
+        return redirect("blogs:index")
+
     if request.method != "POST":
         form = BlogPostForm()
     else:
