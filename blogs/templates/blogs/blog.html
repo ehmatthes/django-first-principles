@@ -20,7 +20,9 @@
     <h3>No posts have been written yet.</h3>
   {% endfor %}
 
-  <a class="button primary"
-    href="{% url 'blogs:new_post' blog.id %}">New post</a>
+  {% if request.user == blog.owner %}
+    <a class="button primary"
+      href="{% url 'blogs:new_post' blog.id %}">New post</a>
+  {% endif %}
 
 {% endblock content %}
