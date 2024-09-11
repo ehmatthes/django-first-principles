@@ -1,6 +1,6 @@
 from pathlib import Path
 
-ROOT_URLCONF="blogmaker_lite"
+ROOT_URLCONF="blogmaker_lite.urls"
 
 DEBUG=True
 
@@ -42,7 +42,7 @@ MIDDLEWARE = [
 DATABASES={
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': Path(__file__).parent / 'db.sqlite3',
+        'NAME': Path(__file__).parents[1] / 'db.sqlite3',
     }
 }
 DEFAULT_AUTO_FIELD="django.db.models.BigAutoField"

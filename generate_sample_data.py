@@ -13,7 +13,7 @@ parser.add_argument("--num-posts", type=int, default=100)
 args = parser.parse_args()
 
 # Load settings.
-os.environ["DJANGO_SETTINGS_MODULE"] = "settings"
+os.environ["DJANGO_SETTINGS_MODULE"] = "blogmaker_lite.settings"
 django.setup()
 
 # Flush current data.
