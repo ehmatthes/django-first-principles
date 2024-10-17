@@ -28,6 +28,7 @@ TEMPLATES=[
 INSTALLED_APPS=[
     "blogs",
     "accounts",
+    "simple_deploy",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
