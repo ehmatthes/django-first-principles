@@ -5,3 +5,9 @@ Faker==25.9.1
 python-dateutil==2.9.0.post0
 six==1.16.0
 sqlparse==0.5.0
+
+django-simple-deploy
+gunicorn
+psycopg2-binary
+dj-database-url
+whitenoise
